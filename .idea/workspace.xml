@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a0eac05d-6f58-48dd-8d09-a120cd2067a9" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1Uk2JiwvE04b9slL00Q0RdkTh6F" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/scss" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\flori\Documents\GitHub\otcferes\scss" />
+    </key>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a0eac05d-6f58-48dd-8d09-a120cd2067a9" name="Default Changelist" comment="" />
+      <created>1575886202653</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1575886202653</updated>
+      <workItem from="1575886204885" duration="9319000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="915" y="478" width="730" height="482" key="EditFileWatcherDialog" timestamp="1575901612130">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="915" y="478" width="730" height="482" key="EditFileWatcherDialog/2560.139.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1575901612130" />
+    <state width="2539" height="401" key="GridCell.Tab.0.bottom" timestamp="1575901743603">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2539" height="401" key="GridCell.Tab.0.bottom/2560.139.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1575901743603" />
+    <state width="2539" height="401" key="GridCell.Tab.0.center" timestamp="1575901743603">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2539" height="401" key="GridCell.Tab.0.center/2560.139.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1575901743603" />
+    <state width="2539" height="401" key="GridCell.Tab.0.left" timestamp="1575901743603">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2539" height="401" key="GridCell.Tab.0.left/2560.139.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1575901743603" />
+    <state width="2539" height="401" key="GridCell.Tab.0.right" timestamp="1575901743603">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2539" height="401" key="GridCell.Tab.0.right/2560.139.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1575901743603" />
+    <state x="781" y="342" key="SettingsEditor" timestamp="1575901618121">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="781" y="342" key="SettingsEditor/2560.139.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1575901618121" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1575900890237">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/2560.139.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1575900890237" />
+  </component>
+</project>
