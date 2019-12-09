@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Creative - Start Bootstrap Theme</title>
+  <title>OpenTableClone - Manage your destination</title>
 
   <!-- Font Awesome Icons -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -27,265 +27,356 @@
 
 <body id="page-top">
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">OpenTableClone</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto my-2 my-lg-0">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#bookings">Bookings</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#data">Data</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#pictures">Pictures</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-          </li>
-        </ul>
-      </div>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">OpenTableClone</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto my-2 my-lg-0">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#bookings">Bookings</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#data">Data</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#pictures">Pictures</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+        </li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <!-- Masthead -->
-  <header class="masthead">
-    <div class="container h-100">
-      <div class="row h-100 align-items-center justify-content-center text-center">
-        <div class="col-lg-10 align-self-end">
-          <h1 class="text-uppercase text-white font-weight-bold">Your Favorite Platform For More Guests</h1>
-          <hr class="divider my-4">
-        </div>
-        <div class="col-lg-8 align-self-baseline">
-          <p class="text-white-75 font-weight-light mb-5">OpenTableClone provides a web app for guests to directly make a reservation at your restaurant. Manage your reservations and information online.</p>
-          <a class="btn btn-primary btn-xl js-scroll-trigger" href="#bookings">Manage your bookings</a>
-        </div>
+<!-- Masthead -->
+<header class="masthead">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center justify-content-center text-center">
+      <div class="col-lg-10 align-self-end">
+        <h1 class="text-uppercase text-white font-weight-bold">Your Favorite Platform For More Guests</h1>
+        <hr class="divider my-4">
+      </div>
+      <div class="col-lg-8 align-self-baseline">
+        <p class="text-white-75 font-weight-light mb-5">OpenTableClone provides a web app for guests to directly make a reservation at your restaurant. Manage your reservations and information online.</p>
+        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#bookings">Manage your bookings</a>
       </div>
     </div>
-  </header>
+  </div>
+</header>
 
-  <!-- About Section -->
-  <section class="page-section bg-primary" id="bookings">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-          <h2 class="text-white mt-0">Current Bookings!</h2>
-          <hr class="divider light my-4">
-          <p class="text-white-50 mb-4">All future reservations:</p>
-        </div>
-      </div>
-    </div>
+<!-- About Section -->
+<section class="page-section bg-primary" id="bookings">
+  <div class="container">
     <div class="row justify-content-center">
-      <div class="col-lg-10 text-center">
-        <table class="table table-hover bg-light table-borderless" id="result-table">
-        </table>
-        <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
+      <div class="col-lg-8 text-center">
+        <h2 class="text-white mt-0">Current Bookings!</h2>
+        <hr class="divider light my-4">
+        <p class="text-white-50 mb-4">All future reservations:</p>
       </div>
     </div>
-  </section>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-lg-10 text-center">
+      <table class="table table-hover bg-light table-borderless" id="result-table">
+      </table>
+    </div>
+    <div class="row booking-form justify-content-center" id="booking" style="width: 500px; margin: 0">
+      <form id="test">
+        <div class="form-group">
+          <input type="text" class="form-control" id="user-id" name="user-id" placeholder="User-ID" required="required">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" id="pax" name="pax" placeholder="Pax" required="required">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" id="table-no" name="table-no" placeholder="Table Number" required="required">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" id="date" name="date" placeholder="Date YYYY-MM-DD" required="required">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" id="time" name="time" placeholder="Time HH-MM" required="required">
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <button type="button" class="btn btn-dark btn-xl" onclick=updateBooking(test)>Update Booking</button>
+    <button type="submit" class="btn btn-light btn-xl" onclick=addNewBooking(test)>Add booking</button>
+  </div>
+  </div>
+</section>
 
-  <!-- Services Section -->
-  <section class="page-section" id="data">
-    <div class="container">
-      <h2 class="text-center mt-0">Manage your destinations data</h2>
-      <hr class="divider my-4">
-      <div class="row">
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-            <i class="fas fa-4x fa-gem text-primary mb-4"></i>
-            <h3 class="h4 mb-2">Sturdy Themes</h3>
-            <p class="text-muted mb-0">Our themes are updated regularly to keep them bug free!</p>
+<!-- Services Section -->
+<section class="page-section" id="data">
+  <div class="container">
+    <h2 class="text-center mt-0">Manage your destinations data</h2>
+    <hr class="divider my-4">
+    <div class="row">
+      <div class="col-lg-3 col-md-6 text-center">
+        <div class="mt-5">
+          <i class="fas fa-4x fa-gem text-primary mb-4"></i>
+          <h3 class="h4 mb-2">Sturdy Themes</h3>
+          <p class="text-muted mb-0">Our themes are updated regularly to keep them bug free!</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 text-center">
+        <div class="mt-5">
+          <i class="fas fa-4x fa-laptop-code text-primary mb-4"></i>
+          <h3 class="h4 mb-2">Up to Date</h3>
+          <p class="text-muted mb-0">All dependencies are kept current to keep things fresh.</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 text-center">
+        <div class="mt-5">
+          <i class="fas fa-4x fa-globe text-primary mb-4"></i>
+          <h3 class="h4 mb-2">Ready to Publish</h3>
+          <p class="text-muted mb-0">You can use this design as is, or you can make changes!</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 text-center">
+        <div class="mt-5">
+          <i class="fas fa-4x fa-heart text-primary mb-4"></i>
+          <h3 class="h4 mb-2">Made with Love</h3>
+          <p class="text-muted mb-0">Is it really open source if it's not made with love?</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio Section -->
+<section id="pictures">
+  <div class="container-fluid p-0">
+    <div class="row no-gutters">
+      <div class="col-lg-4 col-sm-6">
+        <a class="portfolio-box" href="img/portfolio/fullsize/1.jpg">
+          <img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="">
+          <div class="portfolio-box-caption">
+            <div class="project-category text-white-50">
+              Category
+            </div>
+            <div class="project-name">
+              Project Name
+            </div>
           </div>
-        </div>
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-            <i class="fas fa-4x fa-laptop-code text-primary mb-4"></i>
-            <h3 class="h4 mb-2">Up to Date</h3>
-            <p class="text-muted mb-0">All dependencies are kept current to keep things fresh.</p>
+        </a>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <a class="portfolio-box" href="img/portfolio/fullsize/2.jpg">
+          <img class="img-fluid" src="img/portfolio/thumbnails/2.jpg" alt="">
+          <div class="portfolio-box-caption">
+            <div class="project-category text-white-50">
+              Category
+            </div>
+            <div class="project-name">
+              Project Name
+            </div>
           </div>
-        </div>
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-            <i class="fas fa-4x fa-globe text-primary mb-4"></i>
-            <h3 class="h4 mb-2">Ready to Publish</h3>
-            <p class="text-muted mb-0">You can use this design as is, or you can make changes!</p>
+        </a>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <a class="portfolio-box" href="img/portfolio/fullsize/3.jpg">
+          <img class="img-fluid" src="img/portfolio/thumbnails/3.jpg" alt="">
+          <div class="portfolio-box-caption">
+            <div class="project-category text-white-50">
+              Category
+            </div>
+            <div class="project-name">
+              Project Name
+            </div>
           </div>
-        </div>
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-            <i class="fas fa-4x fa-heart text-primary mb-4"></i>
-            <h3 class="h4 mb-2">Made with Love</h3>
-            <p class="text-muted mb-0">Is it really open source if it's not made with love?</p>
+        </a>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <a class="portfolio-box" href="img/portfolio/fullsize/4.jpg">
+          <img class="img-fluid" src="img/portfolio/thumbnails/4.jpg" alt="">
+          <div class="portfolio-box-caption">
+            <div class="project-category text-white-50">
+              Category
+            </div>
+            <div class="project-name">
+              Project Name
+            </div>
           </div>
-        </div>
+        </a>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <a class="portfolio-box" href="img/portfolio/fullsize/5.jpg">
+          <img class="img-fluid" src="img/portfolio/thumbnails/5.jpg" alt="">
+          <div class="portfolio-box-caption">
+            <div class="project-category text-white-50">
+              Category
+            </div>
+            <div class="project-name">
+              Project Name
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <a class="portfolio-box" href="img/portfolio/fullsize/6.jpg">
+          <img class="img-fluid" src="img/portfolio/thumbnails/6.jpg" alt="">
+          <div class="portfolio-box-caption p-3">
+            <div class="project-category text-white-50">
+              Category
+            </div>
+            <div class="project-name">
+              Project Name
+            </div>
+          </div>
+        </a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Portfolio Section -->
-  <section id="pictures">
-    <div class="container-fluid p-0">
-      <div class="row no-gutters">
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/1.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                Category
-              </div>
-              <div class="project-name">
-                Project Name
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/2.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/2.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                Category
-              </div>
-              <div class="project-name">
-                Project Name
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/3.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/3.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                Category
-              </div>
-              <div class="project-name">
-                Project Name
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/4.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/4.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                Category
-              </div>
-              <div class="project-name">
-                Project Name
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/5.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/5.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                Category
-              </div>
-              <div class="project-name">
-                Project Name
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/6.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/6.jpg" alt="">
-            <div class="portfolio-box-caption p-3">
-              <div class="project-category text-white-50">
-                Category
-              </div>
-              <div class="project-name">
-                Project Name
-              </div>
-            </div>
-          </a>
-        </div>
+<!-- Call to Action Section -->
+<section class="page-section bg-dark text-white">
+  <div class="container text-center">
+    <h2 class="mb-4">Free Download at Start Bootstrap!</h2>
+    <a class="btn btn-light btn-xl" href="https://startbootstrap.com/themes/creative/">Download Now!</a>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="page-section" id="contact">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h2 class="mt-0">Let's Get In Touch!</h2>
+        <hr class="divider my-4">
+        <p class="text-muted mb-5">Ready to start your next project with us? Give us a call or send us an email and we will get back to you as soon as possible!</p>
       </div>
     </div>
-  </section>
-
-  <!-- Call to Action Section -->
-  <section class="page-section bg-dark text-white">
-    <div class="container text-center">
-      <h2 class="mb-4">Free Download at Start Bootstrap!</h2>
-      <a class="btn btn-light btn-xl" href="https://startbootstrap.com/themes/creative/">Download Now!</a>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="page-section" id="contact">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-          <h2 class="mt-0">Let's Get In Touch!</h2>
-          <hr class="divider my-4">
-          <p class="text-muted mb-5">Ready to start your next project with us? Give us a call or send us an email and we will get back to you as soon as possible!</p>
-        </div>
+    <div class="row">
+      <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
+        <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
+        <div>+1 (202) 555-0149</div>
       </div>
-      <div class="row">
-        <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
-          <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
-          <div>+1 (202) 555-0149</div>
-        </div>
-        <div class="col-lg-4 mr-auto text-center">
-          <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
-          <!-- Make sure to change the email address in anchor text AND the link below! -->
-          <a class="d-block" href="mailto:contact@yourwebsite.com">contact@yourwebsite.com</a>
-        </div>
+      <div class="col-lg-4 mr-auto text-center">
+        <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
+        <!-- Make sure to change the email address in anchor text AND the link below! -->
+        <a class="d-block" href="mailto:contact@yourwebsite.com">contact@yourwebsite.com</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer class="bg-light py-5">
-    <div class="container">
-      <div class="small text-center text-muted">Copyright &copy; 2019 - Start Bootstrap</div>
-    </div>
-  </footer>
+<!-- Footer -->
+<footer class="bg-light py-5">
+  <div class="container">
+    <div class="small text-center text-muted">Copyright &copy; 2019 - Start Bootstrap</div>
+  </div>
+</footer>
 
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 
-  <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+<!-- Plugin JavaScript -->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
-  <!-- Custom scripts for this template -->
-  <script src="js/creative.min.js"></script>
+<!-- Custom scripts for this template -->
+<script src="js/creative.min.js"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
 
-  <script>
-    Cookies.set("resId", "45");
-    var resId = Cookies.get("resId");
-    console.log(resId);
-    var resData;
-    $.getJSON("http://localhost:8080/api/restaurants/" + resId, function (data, status, xhr) {
-      resData = data;
-      console.log(resData);
-    });
+<script>
+  Cookies.set("resId", "45");
+  var resId = Cookies.get("resId");
+  console.log(resId);
+  var resData;
+  $.getJSON("http://localhost:8080/api/restaurants/" + resId, function (data, status, xhr) {
+    resData = data;
+    console.log(resData);
+  });
 
-    $.getJSON("http://localhost:8080/api/restaurants/" + resId + "/bookings", function (bData, status, xhr) {
-      console.log(bData);
-      $('#result-table').html("<thead class='thead-light'><tr><th>BookingID</th><th>Pax></th><th>User</th><th>TableNo</th><th>Date</th><th>Time</th></tr></thead>");
-      for (let index = 0; index < bData.length; index++) {
-        const booking = bData[index];
-        $('#result-table').append("<tr><td>" + booking.id + "</td><td>" + booking.pax + "</td><td>" + booking.user.id + " - " + booking.user.firstName + " " + booking.user.lastName + "</td><td>" + booking.restaurantTable.tableNrRest + "</td><td>" + booking.date + "</td><td>" + booking.time + "</td></tr>");
+  $.getJSON("http://localhost:8080/api/restaurants/" + resId + "/bookings", function (bData, status, xhr) {
+    console.log(bData);
+    $('#result-table').html("<thead class='thead-light'><tr><th>BookingID</th><th>Pax</th><th>User</th><th>TableNo</th><th>Date</th><th>Time</th></tr></thead>");
+    for (let index = 0; index < bData.length; index++) {
+      const booking = bData[index];
+      $('#result-table').append("<tr><td>" + booking.id + "</td><td>" + booking.pax + "</td><td>" + booking.user.id + " - " + booking.user.firstName + " " + booking.user.lastName + "</td><td>" + booking.restaurantTable.tableNrRest + "</td><td>" + booking.date + "</td><td>" + booking.time + "</td></tr>");
+    }
+  });
+
+  function addNewBooking(form) {
+    submitForm(objectifyForm(form))
+  }
+
+  function objectifyForm(formArray) {
+    let returnArray = {};
+    for (let i = 0; i < formArray.length; i++) {
+      if (formArray[i]['value'] != "") {
+        returnArray[formArray[i]['name']] = formArray[i]['value'];
+      }
+    }
+    return returnArray;
+  }
+
+
+  function updateBooking(form) {
+    submitUpdate(objectifyForm(form));
+  }
+
+  function submitUpdate(formdata) {
+    JSON.stringify(formdata);
+
+    return jQuery.ajax({
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      'type': 'PUT',
+      'url': "http://localhost:8080/api/bookings/" + bookingId,
+      'data': JSON.stringify(formdata),
+      'dataType': 'json',
+      'success': ()=>{
+        window.location.reload();
       }
     });
-  </script>
+  }
+
+  function submitForm(formdata) {
+    return jQuery.ajax({
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      'type': 'POST',
+      'url': "http://localhost:8080/api/customers",
+      'data': JSON.stringify(formdata),
+      'dataType': 'json',
+      'success': ()=>{
+        window.location.reload();
+      }
+    });
+  }
+
+  $(document).on('click', '#result-table tr', function () {
+    // get cell value by click and column index of table
+    fillFormOnClick($(this));
+  });
+
+
+  function fillFormOnClick(customerrow) {
+    customerid = ($(customerrow).find("td").eq(0).html());
+    $("#firstName").val(customerrow.find("td[id='fname']").html());
+    $("#lastName").val(customerrow.find("td[id='lname']").html());
+    $("#email").val(customerrow.find("td[id='cemail']").html());
+    $("#birthday").val(customerrow.find("td[id='cbirthday']").html());
+    $("#address").val(customerrow.find("td[id='caddress']").html());
+  }
+</script>
 
 </body>
 
