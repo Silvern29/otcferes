@@ -79,170 +79,181 @@
         <p class="text-white-50 mb-4">All future reservations:</p>
       </div>
     </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-lg-10 text-center">
-      <table class="table table-hover bg-light table-borderless" id="result-table">
-      </table>
+    <div class="row justify-content-center">
+      <div class="col-lg-10 text-center">
+        <table class="table table-hover bg-light table-borderless" id="result-table">
+        </table>
+      </div>
+      <div class="row booking-form justify-content-center" id="booking" style="width: 500px; margin: 0">
+        <form id="test" class="col-lg-8 text-center">
+          <div class="form-group">
+            <input type="hidden" class="form-control" id="booking-id" name="id">
+            <input type="hidden" class="form-control" id="res-id" name="restaurantId">
+          </div>
+          <div class="form-group">
+            <label for="user-id">User-ID</label>
+            <input type="text" class="form-control form-control-sm" id="user-id" name="userId" placeholder="User-ID" required="required">
+<!--            <input style="width: 60%; display: inline; margin-left: 9%" type="text" class="form-control" id="user-fname" name="user-fname" placeholder="Firstname" required="required">-->
+<!--            <input style="width: 100%; display: inline" type="text" class="form-control" id="user-lname" name="user-lname" placeholder="Lastname" required="required">-->
+          </div>
+          <div class="form-group">
+            <label for="pax">Pax</label>
+            <input type="text" class="form-control form-control-sm" id="pax" name="pax" placeholder="Pax" required="required">
+          </div>
+          <div class="form-group">
+            <label for="table-no">Table Number</label>
+            <input type="text" class="form-control form-control-sm" id="table-no" name="tableId" placeholder="Table Number" required="required">
+          </div>
+          <div class="form-group">
+            <label for="date">Booking Date</label>
+            <input type="text" class="form-control form-control-sm" id="date" name="date" placeholder="YYYY-MM-DD" required="required">
+          </div>
+          <div class="form-group">
+            <label for="time">Booking Time</label>
+            <input type="text" class="form-control form-control-sm" id="time" name="time" placeholder="HH:MM:SS" required="required">
+          </div>
+        </form>
+        <div style="margin-top: 20%" class="col-lg-4 text-center justify-content-center">
+          <button type="button" class="btn btn-dark btn-xl" onclick=updateBooking(test)>Update Booking</button>
+          <button type="button" class="btn btn-light btn-xl" onclick=addNewBooking(test)>Add booking</button>
+        </div>
+      </div>
     </div>
-    <div class="row booking-form justify-content-center" id="booking" style="width: 500px; margin: 0">
-      <form id="test">
-        <div class="form-group">
-          <input type="text" class="form-control" id="user-id" name="user-id" placeholder="User-ID" required="required">
-        </div>
-        <div class="form-group">
-          <input type="text" class="form-control" id="pax" name="pax" placeholder="Pax" required="required">
-        </div>
-        <div class="form-group">
-          <input type="text" class="form-control" id="table-no" name="table-no" placeholder="Table Number" required="required">
-        </div>
-        <div class="form-group">
-          <input type="text" class="form-control" id="date" name="date" placeholder="Date YYYY-MM-DD" required="required">
-        </div>
-        <div class="form-group">
-          <input type="text" class="form-control" id="time" name="time" placeholder="Time HH-MM" required="required">
-        </div>
-      </form>
-    </div>
-  </div>
-  <div class="row justify-content-center">
-    <button type="button" class="btn btn-dark btn-xl" onclick=updateBooking(test)>Update Booking</button>
-    <button type="submit" class="btn btn-light btn-xl" onclick=addNewBooking(test)>Add booking</button>
   </div>
   </div>
 </section>
 
-<!-- Services Section -->
-<section class="page-section" id="data">
-  <div class="container">
-    <h2 class="text-center mt-0">Manage your destinations data</h2>
-    <hr class="divider my-4">
-    <div class="row">
-      <div class="col-lg-3 col-md-6 text-center">
-        <div class="mt-5">
-          <i class="fas fa-4x fa-gem text-primary mb-4"></i>
-          <h3 class="h4 mb-2">Sturdy Themes</h3>
-          <p class="text-muted mb-0">Our themes are updated regularly to keep them bug free!</p>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 text-center">
-        <div class="mt-5">
-          <i class="fas fa-4x fa-laptop-code text-primary mb-4"></i>
-          <h3 class="h4 mb-2">Up to Date</h3>
-          <p class="text-muted mb-0">All dependencies are kept current to keep things fresh.</p>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 text-center">
-        <div class="mt-5">
-          <i class="fas fa-4x fa-globe text-primary mb-4"></i>
-          <h3 class="h4 mb-2">Ready to Publish</h3>
-          <p class="text-muted mb-0">You can use this design as is, or you can make changes!</p>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 text-center">
-        <div class="mt-5">
-          <i class="fas fa-4x fa-heart text-primary mb-4"></i>
-          <h3 class="h4 mb-2">Made with Love</h3>
-          <p class="text-muted mb-0">Is it really open source if it's not made with love?</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<!--&lt;!&ndash; Services Section &ndash;&gt;-->
+<!--<section class="page-section" id="data">-->
+<!--  <div class="container">-->
+<!--    <h2 class="text-center mt-0">Manage your destinations data</h2>-->
+<!--    <hr class="divider my-4">-->
+<!--    <div class="row">-->
+<!--      <div class="col-lg-3 col-md-6 text-center">-->
+<!--        <div class="mt-5">-->
+<!--          <i class="fas fa-4x fa-gem text-primary mb-4"></i>-->
+<!--          <h3 class="h4 mb-2">Sturdy Themes</h3>-->
+<!--          <p class="text-muted mb-0">Our themes are updated regularly to keep them bug free!</p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="col-lg-3 col-md-6 text-center">-->
+<!--        <div class="mt-5">-->
+<!--          <i class="fas fa-4x fa-laptop-code text-primary mb-4"></i>-->
+<!--          <h3 class="h4 mb-2">Up to Date</h3>-->
+<!--          <p class="text-muted mb-0">All dependencies are kept current to keep things fresh.</p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="col-lg-3 col-md-6 text-center">-->
+<!--        <div class="mt-5">-->
+<!--          <i class="fas fa-4x fa-globe text-primary mb-4"></i>-->
+<!--          <h3 class="h4 mb-2">Ready to Publish</h3>-->
+<!--          <p class="text-muted mb-0">You can use this design as is, or you can make changes!</p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="col-lg-3 col-md-6 text-center">-->
+<!--        <div class="mt-5">-->
+<!--          <i class="fas fa-4x fa-heart text-primary mb-4"></i>-->
+<!--          <h3 class="h4 mb-2">Made with Love</h3>-->
+<!--          <p class="text-muted mb-0">Is it really open source if it's not made with love?</p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
 
-<!-- Portfolio Section -->
-<section id="pictures">
-  <div class="container-fluid p-0">
-    <div class="row no-gutters">
-      <div class="col-lg-4 col-sm-6">
-        <a class="portfolio-box" href="img/portfolio/fullsize/1.jpg">
-          <img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="">
-          <div class="portfolio-box-caption">
-            <div class="project-category text-white-50">
-              Category
-            </div>
-            <div class="project-name">
-              Project Name
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col-lg-4 col-sm-6">
-        <a class="portfolio-box" href="img/portfolio/fullsize/2.jpg">
-          <img class="img-fluid" src="img/portfolio/thumbnails/2.jpg" alt="">
-          <div class="portfolio-box-caption">
-            <div class="project-category text-white-50">
-              Category
-            </div>
-            <div class="project-name">
-              Project Name
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col-lg-4 col-sm-6">
-        <a class="portfolio-box" href="img/portfolio/fullsize/3.jpg">
-          <img class="img-fluid" src="img/portfolio/thumbnails/3.jpg" alt="">
-          <div class="portfolio-box-caption">
-            <div class="project-category text-white-50">
-              Category
-            </div>
-            <div class="project-name">
-              Project Name
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col-lg-4 col-sm-6">
-        <a class="portfolio-box" href="img/portfolio/fullsize/4.jpg">
-          <img class="img-fluid" src="img/portfolio/thumbnails/4.jpg" alt="">
-          <div class="portfolio-box-caption">
-            <div class="project-category text-white-50">
-              Category
-            </div>
-            <div class="project-name">
-              Project Name
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col-lg-4 col-sm-6">
-        <a class="portfolio-box" href="img/portfolio/fullsize/5.jpg">
-          <img class="img-fluid" src="img/portfolio/thumbnails/5.jpg" alt="">
-          <div class="portfolio-box-caption">
-            <div class="project-category text-white-50">
-              Category
-            </div>
-            <div class="project-name">
-              Project Name
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col-lg-4 col-sm-6">
-        <a class="portfolio-box" href="img/portfolio/fullsize/6.jpg">
-          <img class="img-fluid" src="img/portfolio/thumbnails/6.jpg" alt="">
-          <div class="portfolio-box-caption p-3">
-            <div class="project-category text-white-50">
-              Category
-            </div>
-            <div class="project-name">
-              Project Name
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
+<!--&lt;!&ndash; Portfolio Section &ndash;&gt;-->
+<!--<section id="pictures">-->
+<!--  <div class="container-fluid p-0">-->
+<!--    <div class="row no-gutters">-->
+<!--      <div class="col-lg-4 col-sm-6">-->
+<!--        <a class="portfolio-box" href="img/portfolio/fullsize/1.jpg">-->
+<!--          <img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="">-->
+<!--          <div class="portfolio-box-caption">-->
+<!--            <div class="project-category text-white-50">-->
+<!--              Category-->
+<!--            </div>-->
+<!--            <div class="project-name">-->
+<!--              Project Name-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </a>-->
+<!--      </div>-->
+<!--      <div class="col-lg-4 col-sm-6">-->
+<!--        <a class="portfolio-box" href="img/portfolio/fullsize/2.jpg">-->
+<!--          <img class="img-fluid" src="img/portfolio/thumbnails/2.jpg" alt="">-->
+<!--          <div class="portfolio-box-caption">-->
+<!--            <div class="project-category text-white-50">-->
+<!--              Category-->
+<!--            </div>-->
+<!--            <div class="project-name">-->
+<!--              Project Name-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </a>-->
+<!--      </div>-->
+<!--      <div class="col-lg-4 col-sm-6">-->
+<!--        <a class="portfolio-box" href="img/portfolio/fullsize/3.jpg">-->
+<!--          <img class="img-fluid" src="img/portfolio/thumbnails/3.jpg" alt="">-->
+<!--          <div class="portfolio-box-caption">-->
+<!--            <div class="project-category text-white-50">-->
+<!--              Category-->
+<!--            </div>-->
+<!--            <div class="project-name">-->
+<!--              Project Name-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </a>-->
+<!--      </div>-->
+<!--      <div class="col-lg-4 col-sm-6">-->
+<!--        <a class="portfolio-box" href="img/portfolio/fullsize/4.jpg">-->
+<!--          <img class="img-fluid" src="img/portfolio/thumbnails/4.jpg" alt="">-->
+<!--          <div class="portfolio-box-caption">-->
+<!--            <div class="project-category text-white-50">-->
+<!--              Category-->
+<!--            </div>-->
+<!--            <div class="project-name">-->
+<!--              Project Name-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </a>-->
+<!--      </div>-->
+<!--      <div class="col-lg-4 col-sm-6">-->
+<!--        <a class="portfolio-box" href="img/portfolio/fullsize/5.jpg">-->
+<!--          <img class="img-fluid" src="img/portfolio/thumbnails/5.jpg" alt="">-->
+<!--          <div class="portfolio-box-caption">-->
+<!--            <div class="project-category text-white-50">-->
+<!--              Category-->
+<!--            </div>-->
+<!--            <div class="project-name">-->
+<!--              Project Name-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </a>-->
+<!--      </div>-->
+<!--      <div class="col-lg-4 col-sm-6">-->
+<!--        <a class="portfolio-box" href="img/portfolio/fullsize/6.jpg">-->
+<!--          <img class="img-fluid" src="img/portfolio/thumbnails/6.jpg" alt="">-->
+<!--          <div class="portfolio-box-caption p-3">-->
+<!--            <div class="project-category text-white-50">-->
+<!--              Category-->
+<!--            </div>-->
+<!--            <div class="project-name">-->
+<!--              Project Name-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </a>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
 
-<!-- Call to Action Section -->
-<section class="page-section bg-dark text-white">
-  <div class="container text-center">
-    <h2 class="mb-4">Free Download at Start Bootstrap!</h2>
-    <a class="btn btn-light btn-xl" href="https://startbootstrap.com/themes/creative/">Download Now!</a>
-  </div>
-</section>
+<!--&lt;!&ndash; Call to Action Section &ndash;&gt;-->
+<!--<section class="page-section bg-dark text-white">-->
+<!--  <div class="container text-center">-->
+<!--    <h2 class="mb-4">Free Download at Start Bootstrap!</h2>-->
+<!--    <a class="btn btn-light btn-xl" href="https://startbootstrap.com/themes/creative/">Download Now!</a>-->
+<!--  </div>-->
+<!--</section>-->
 
 <!-- Contact Section -->
 <section class="page-section" id="contact">
@@ -291,6 +302,7 @@
 <script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
 
 <script>
+  $.ajaxSetup({ cache: false });
   Cookies.set("resId", "45");
   var resId = Cookies.get("resId");
   console.log(resId);
@@ -302,14 +314,16 @@
 
   $.getJSON("http://localhost:8080/api/restaurants/" + resId + "/bookings", function (bData, status, xhr) {
     console.log(bData);
-    $('#result-table').html("<thead class='thead-light'><tr><th>BookingID</th><th>Pax</th><th>User</th><th>TableNo</th><th>Date</th><th>Time</th></tr></thead>");
+    $('#result-table').html("<thead class='thead-light'><tr><th>BookingID</th><th>Pax</th><th colspan='3'>User</th><th>TableNo</th><th>Date</th><th>Time</th></tr></thead> <tbody id=\"result-table-body\"></tbody>");
     for (let index = 0; index < bData.length; index++) {
       const booking = bData[index];
-      $('#result-table').append("<tr><td>" + booking.id + "</td><td>" + booking.pax + "</td><td>" + booking.user.id + " - " + booking.user.firstName + " " + booking.user.lastName + "</td><td>" + booking.restaurantTable.tableNrRest + "</td><td>" + booking.date + "</td><td>" + booking.time + "</td></tr>");
+      $('#result-table-body').append("<tr><td class='booking-id'>" + booking.id + "</td><td class='pax'>" + booking.pax + "</td><td class='user-id'>" + booking.user.id + "</td><td class='user-fname'>" + booking.user.firstName + "</td><td class='user-lname'>" + booking.user.lastName + "</td><td class='table-id'>" + booking.restaurantTable.id + "</td><td class='date'>" + booking.date + "</td><td class='time'>" + booking.time + "</td></tr>");
     }
   });
 
   function addNewBooking(form) {
+    $("#booking-id").val("").html();
+    $("#res-id").val(resId).html();
     submitForm(objectifyForm(form))
   }
 
@@ -320,9 +334,9 @@
         returnArray[formArray[i]['name']] = formArray[i]['value'];
       }
     }
+    console.log(returnArray);
     return returnArray;
   }
-
 
   function updateBooking(form) {
     submitUpdate(objectifyForm(form));
@@ -337,7 +351,7 @@
         'Content-Type': 'application/json'
       },
       'type': 'PUT',
-      'url': "http://localhost:8080/api/bookings/" + bookingId,
+      'url': "http://localhost:8080/api/bookings/",
       'data': JSON.stringify(formdata),
       'dataType': 'json',
       'success': ()=>{
@@ -353,7 +367,7 @@
         'Content-Type': 'application/json'
       },
       'type': 'POST',
-      'url': "http://localhost:8080/api/customers",
+      'url': "http://localhost:8080/api/bookings/",
       'data': JSON.stringify(formdata),
       'dataType': 'json',
       'success': ()=>{
@@ -368,13 +382,17 @@
   });
 
 
-  function fillFormOnClick(customerrow) {
-    customerid = ($(customerrow).find("td").eq(0).html());
-    $("#firstName").val(customerrow.find("td[id='fname']").html());
-    $("#lastName").val(customerrow.find("td[id='lname']").html());
-    $("#email").val(customerrow.find("td[id='cemail']").html());
-    $("#birthday").val(customerrow.find("td[id='cbirthday']").html());
-    $("#address").val(customerrow.find("td[id='caddress']").html());
+  function fillFormOnClick(bookingRow) {
+    // bookingId = ($(bookingRow).find("td").eq(0).html());
+    $("#booking-id").val(bookingRow.find("td[class='booking-id']").html());
+    $("#res-id").val(resId).html();
+    $("#user-id").val(bookingRow.find("td[class='user-id']").html());
+    // $("#user-fname").val(bookingRow.find("td[class='user-fname']").html());
+    // $("#user-lname").val(bookingRow.find("td[class='user-lname']").html());
+    $("#pax").val(bookingRow.find("td[class='pax']").html());
+    $("#table-no").val(bookingRow.find("td[class='table-no']").html());
+    $("#date").val(bookingRow.find("td[class='date']").html());
+    $("#time").val(bookingRow.find("td[class='time']").html());
   }
 </script>
 

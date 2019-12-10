@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="css/login.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+
+        <!-- Icon -->
+        <div class="fadeIn first">
+<!--            <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="Open" />-->
+            <h2>OpenTableClone</h2>
+        </div>
+
+        <!-- Login Form -->
+        <form id="test">
+            <input type="text" id="login" class="fadeIn second" name="email" placeholder="login">
+            <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
+            <input type="submit" class="fadeIn fourth" onclick=login(test) value="Log In">
+        </form>
+
+        <!-- Remind Passowrd -->
+        <div id="formFooter">
+            <a class="underlineHover" href="#">Forgot Password?</a>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    function login(form) {
+        submitForm(objectifyForm(form));
+    }
+
+    function objectifyForm(formArray) {
+        let returnArray = {};
+        for (let i = 0; i < formArray.length; i++) {
+            if (formArray[i]['value'] != "") {
+                returnArray[formArray[i]['name']] = formArray[i]['value'];
+            }
+        }
+        console.log(returnArray);
+        return returnArray;
+    }
+
+    function submitForm(formdata) {
+        return jQuery.ajax({
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            'type': 'POST',
+            'url': "http://localhost:8080/api/admins/login",
+            'data': JSON.stringify(formdata),
+            'dataType': 'json',
+            'success': console.log("Success")
+        });
+    }
+</script>
+</body>
+</html>
