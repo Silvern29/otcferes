@@ -24,9 +24,9 @@
         <!-- Login Form -->
         <form id="test">
             <input type="text" id="login" class="fadeIn second" name="email" placeholder="login">
-            <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
-            <input type="submit" class="fadeIn fourth" onclick=login(test) value="Log In">
+            <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
         </form>
+        <input type="button" class="fadeIn fourth" onclick=loginAdmin(test) value="Login">
 
         <!-- Remind Passowrd -->
         <div id="formFooter">
@@ -37,7 +37,7 @@
 </div>
 
 <script>
-    function login(form) {
+    function loginAdmin(form) {
         submitForm(objectifyForm(form));
     }
 
@@ -62,7 +62,12 @@
             'url': "http://localhost:8080/api/admins/login",
             'data': JSON.stringify(formdata),
             'dataType': 'json',
-            'success': console.log("Success")
+            'success': function(e){
+                console.log(e);
+                localStorage.setItem('resId', e.restaurant.id);
+                localStorage.setItem('jws', e.jws);
+                window.location = "index.html";
+            }
         });
     }
 </script>

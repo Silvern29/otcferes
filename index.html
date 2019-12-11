@@ -22,7 +22,7 @@
 
   <!-- Theme CSS - Includes Bootstrap -->
   <link href="css/creative.min.css" rel="stylesheet">
-
+  <link href="css/index.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -36,17 +36,20 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto my-2 my-lg-0">
-        <li class="nav-item">
+        <li class="nav-item center">
           <a class="nav-link js-scroll-trigger" href="#bookings">Bookings</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item center">
           <a class="nav-link js-scroll-trigger" href="#data">Data</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item center">
           <a class="nav-link js-scroll-trigger" href="#pictures">Pictures</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item center">
           <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+        </li>
+        <li class="nav-item center">
+          <button type="button" class="btn btn-dark" onclick=logout()>Logout</button>
         </li>
       </ul>
     </div>
@@ -87,14 +90,8 @@
       <div class="row booking-form justify-content-center" id="booking" style="width: 500px; margin: 0">
         <form id="test" class="col-lg-8 text-center">
           <div class="form-group">
-            <input type="hidden" class="form-control" id="booking-id" name="id">
-            <input type="hidden" class="form-control" id="res-id" name="restaurantId">
-          </div>
-          <div class="form-group">
             <label for="user-id">User-ID</label>
             <input type="text" class="form-control form-control-sm" id="user-id" name="userId" placeholder="User-ID" required="required">
-<!--            <input style="width: 60%; display: inline; margin-left: 9%" type="text" class="form-control" id="user-fname" name="user-fname" placeholder="Firstname" required="required">-->
-<!--            <input style="width: 100%; display: inline" type="text" class="form-control" id="user-lname" name="user-lname" placeholder="Lastname" required="required">-->
           </div>
           <div class="form-group">
             <label for="pax">Pax</label>
@@ -303,39 +300,48 @@
 
 <script>
   $.ajaxSetup({ cache: false });
-  Cookies.set("resId", "45");
-  var resId = Cookies.get("resId");
+  var resId = localStorage.getItem("resId");
+  var currBookId;
   console.log(resId);
   var resData;
+
+  window.onload = function() {
+    document.getElementById('test').reset()
+  }
+
   $.getJSON("http://localhost:8080/api/restaurants/" + resId, function (data, status, xhr) {
     resData = data;
     console.log(resData);
   });
 
-  $.getJSON("http://localhost:8080/api/restaurants/" + resId + "/bookings", function (bData, status, xhr) {
+  $.getJSON("http://localhost:8080/api/restaurants/" + resId + "/bookings/" + localStorage.getItem("jws"), function (bData, status, xhr) {
     console.log(bData);
     $('#result-table').html("<thead class='thead-light'><tr><th>BookingID</th><th>Pax</th><th colspan='3'>User</th><th>TableNo</th><th>Date</th><th>Time</th></tr></thead> <tbody id=\"result-table-body\"></tbody>");
     for (let index = 0; index < bData.length; index++) {
       const booking = bData[index];
-      $('#result-table-body').append("<tr><td class='booking-id'>" + booking.id + "</td><td class='pax'>" + booking.pax + "</td><td class='user-id'>" + booking.user.id + "</td><td class='user-fname'>" + booking.user.firstName + "</td><td class='user-lname'>" + booking.user.lastName + "</td><td class='table-id'>" + booking.restaurantTable.id + "</td><td class='date'>" + booking.date + "</td><td class='time'>" + booking.time + "</td></tr>");
+      $('#result-table-body').append("<tr><td class='booking-id'>" + booking.id + "</td><td class='pax'>" + booking.pax + "</td><td class='user-id'>" + booking.user.id + "</td><td class='user-fname'>" + booking.user.firstName + "</td><td class='user-lname'>" + booking.user.lastName + "</td><td class='table-id'>" + (booking.restaurantTable.id == null ? booking.restaurantTable : booking.restaurantTable.id) + "</td><td class='date'>" + booking.date + "</td><td class='time'>" + booking.time + "</td></tr>");
     }
   });
 
   function addNewBooking(form) {
-    $("#booking-id").val("").html();
-    $("#res-id").val(resId).html();
     submitForm(objectifyForm(form))
   }
 
   function objectifyForm(formArray) {
-    let returnArray = {};
+    let returnObj = {};
+    returnObj['restaurantId'] = resId;
+    returnObj['jws'] = localStorage.getItem('jws');
+    if(currBookId) {
+      returnObj['id'] = currBookId;
+    }
+
     for (let i = 0; i < formArray.length; i++) {
       if (formArray[i]['value'] != "") {
-        returnArray[formArray[i]['name']] = formArray[i]['value'];
+        returnObj[formArray[i]['name']] = formArray[i]['value'];
       }
     }
-    console.log(returnArray);
-    return returnArray;
+    console.log(returnObj);
+    return returnObj;
   }
 
   function updateBooking(form) {
@@ -377,22 +383,22 @@
   }
 
   $(document).on('click', '#result-table tr', function () {
-    // get cell value by click and column index of table
     fillFormOnClick($(this));
   });
 
 
   function fillFormOnClick(bookingRow) {
-    // bookingId = ($(bookingRow).find("td").eq(0).html());
-    $("#booking-id").val(bookingRow.find("td[class='booking-id']").html());
-    $("#res-id").val(resId).html();
+    currBookId = ($(bookingRow).find("td").eq(0).html());
     $("#user-id").val(bookingRow.find("td[class='user-id']").html());
-    // $("#user-fname").val(bookingRow.find("td[class='user-fname']").html());
-    // $("#user-lname").val(bookingRow.find("td[class='user-lname']").html());
     $("#pax").val(bookingRow.find("td[class='pax']").html());
-    $("#table-no").val(bookingRow.find("td[class='table-no']").html());
+    $("#table-no").val(bookingRow.find("td[class='table-id']").html());
     $("#date").val(bookingRow.find("td[class='date']").html());
     $("#time").val(bookingRow.find("td[class='time']").html());
+  }
+
+  logout = () => {
+    localStorage.clear();
+    window.location = "login.html";
   }
 </script>
 
