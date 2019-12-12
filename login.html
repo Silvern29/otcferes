@@ -3,34 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" id="bootstrap-css" rel="stylesheet">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="css/login.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
-
+<div class="background"></div>
 <div class="wrapper fadeInDown">
     <div id="formContent">
         <!-- Tabs Titles -->
 
         <!-- Icon -->
         <div class="fadeIn first">
-<!--            <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="Open" />-->
-            <h2>OpenTableClone</h2>
+            <!--            <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="Open" />-->
+            <h1>OpenTableClone</h1>
         </div>
 
         <!-- Login Form -->
         <form id="test">
-            <input type="text" id="login" class="fadeIn second" name="email" placeholder="login">
-            <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
+            <input class="fadeIn second" id="login" name="email" placeholder="login" type="text">
+            <input class="fadeIn third" id="password" name="password" placeholder="password" type="password">
         </form>
-        <input type="button" class="fadeIn fourth" onclick=loginAdmin(test) value="Login">
+        <input class="fadeIn fourth" onclick=loginAdmin(test); type="button" value="Login">
 
         <!-- Remind Passowrd -->
         <div id="formFooter">
-            <a class="underlineHover" href="#">Forgot Password?</a>
+            <!--            <a class="underlineHover" href="#">Forgot Password?</a>-->
         </div>
 
     </div>
@@ -38,7 +38,8 @@
 
 <script>
     function loginAdmin(form) {
-        submitForm(objectifyForm(form));
+        let response = submitForm(objectifyForm(form));
+        console.log(response);
     }
 
     function objectifyForm(formArray) {
@@ -48,7 +49,6 @@
                 returnArray[formArray[i]['name']] = formArray[i]['value'];
             }
         }
-        console.log(returnArray);
         return returnArray;
     }
 
@@ -62,11 +62,14 @@
             'url': "http://localhost:8080/api/admins/login",
             'data': JSON.stringify(formdata),
             'dataType': 'json',
-            'success': function(e){
+            'success': function (e) {
                 console.log(e);
                 localStorage.setItem('resId', e.restaurant.id);
                 localStorage.setItem('jws', e.jws);
                 window.location = "index.html";
+            },
+            'error': function (xhr, ajaxOptions, thrownError) {
+                alert(xhr.responseJSON.message);
             }
         });
     }
